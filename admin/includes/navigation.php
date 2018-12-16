@@ -12,7 +12,7 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-      <li><a href="../index.php">Home page</a></li>
+      <li><a href="../index.php"><i class="fa fa-fw fa-home"></i> Home</a></li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
@@ -35,13 +35,13 @@
                 <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-              <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
+              <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-newspaper-o"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="posts" class="collapse">
                   <li>
-                      <a href="#"> View All Posts</a>
+                      <a href="#"><i class="fa fa-fw fa-newspaper-o"></i> View All Posts</a>
                   </li>
                   <li>
-                      <a href="#"> Add posts</a>
+                      <a href="#"><i class="fa fa-fw fa-plus"></i> Add posts</a>
                   </li>
               </ul>
             </li>
@@ -52,7 +52,7 @@
                 <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
-              <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>
+              <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="demo" class="collapse">
                   <li>
                       <a href="#"><i class="fa fa-fw fa-user"></i> Dropdown Item</a>

@@ -1,7 +1,6 @@
 <?php include "includes/header.php"?>
 
     <div id="wrapper">
-
         <!-- Navigation -->
 <?php include "includes/navigation.php"?>
 
@@ -16,7 +15,7 @@
                             Welcome to Admin
                             <small>Subheading...</small>
                         </h2>
-                        
+
                     </div>
                 </div>
                 <!-- /.row -->

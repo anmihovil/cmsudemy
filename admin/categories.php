@@ -33,10 +33,10 @@
                               die('Query failed!'. mysqli_error($connection));
                             }
                           }
-
                         }
                       ?>
 
+                      <!-- Create a new category -->
                       <form action="" method="post">
                           <div class="form-group">
                             <label for="cat-title">Add Category</label>
@@ -46,7 +46,20 @@
                             <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                           </div>
                       </form>
-                    </div><!-- Add Category Form -->
+
+                      <!-- Edit an existing category -->
+                    
+
+                      <?php
+                        if(isset($_GET['edit'])){
+                          $cat_id = $_GET['edit'];
+                          include "includes/update_categories.php";
+                        }
+                      ?>
+
+                    </div>
+
+                    <!-- Add Category Form -->
                     <div class="col-xs-6">
 
                       <table class="table table-bordered table-hover">
@@ -71,12 +84,23 @@
                             echo "<td>{$cat_id}</td>";
                             echo "<td>{$cat_title}</td>";
                             echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
+                            echo "<td><a href='categories.php?edit={$cat_id}'>Edit</a></td>";
                             echo "</tr>";
                           }
                           ?>
 
                           <?php
-                          // Delete query 
+                          // Delete query
+                            if(isset($_GET['delete'])){
+                              $the_cat_id = $_GET['delete'];
+                              $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";
+                              $delete_query = mysqli_query($connection, $query);
+                              header("Location: categories.php");
+                            }
+                          ?>
+
+                          <?php
+                          // Update query
                             if(isset($_GET['delete'])){
                               $the_cat_id = $_GET['delete'];
                               $query = "DELETE FROM categories WHERE cat_id = {$the_cat_id} ";

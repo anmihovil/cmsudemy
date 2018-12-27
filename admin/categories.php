@@ -8,11 +8,11 @@
 
         <div class="container-fluid">
 
-            <!-- Page Heading -->
+            <!-- Posts Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="page-header">
-                        Welcome to Admin
+                        Admin's Posts Page
                         <small>Subheading...</small>
                     </h2>
 

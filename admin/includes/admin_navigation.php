@@ -41,7 +41,7 @@
                       <a href="posts.php"><i class="fa fa-fw fa-newspaper-o"></i> View All Posts</a>
                   </li>
                   <li>
-                      <a href="#"><i class="fa fa-fw fa-plus"></i> Add posts</a>
+                      <a href="posts.php?source=add_post"><i class="fa fa-fw fa-plus"></i> Add posts</a>
                   </li>
               </ul>
             </li>

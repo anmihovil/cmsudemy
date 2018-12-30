@@ -1,5 +1,13 @@
 <?php
 
+function confirm($result){
+  global $connection;
+  
+  if(!$result){
+    die("Query failed!". mysqli_error($connection));
+  }
+}
+
 function insert_categories(){
 
   global $connection;
@@ -66,7 +74,7 @@ function update_query(){
     $delete_query = mysqli_query($connection, $query);
     header("Location: categories.php");
   }
-  
+
 }
 
 

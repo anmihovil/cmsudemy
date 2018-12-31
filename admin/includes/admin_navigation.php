@@ -44,7 +44,7 @@
                       <a href="posts.php?source=add_post"><i class="fa fa-fw fa-plus"></i> Add Post</a>
                   </li>
                   <li>
-                      <a href=""><i class="fa fa-fw fa-trash-o"></i> Delete Post</a>
+                      <a href="posts.php?source=edit_post"><i class="fa fa-fw fa-pencil-square-o"></i> Edit Post</a>
                   </li>
               </ul>
             </li>
@@ -52,7 +52,7 @@
                 <a href="categories.php"><i class="fa fa-fw fa-list-alt"></i> Categories</a>
             </li>
             <li class="active">
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
+                <a href="blank-page.html"><i class="fa fa-fw fa-comment"></i> Comments</a>
             </li>
             <li>
               <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Users<i class="fa fa-fw fa-caret-down"></i></a>

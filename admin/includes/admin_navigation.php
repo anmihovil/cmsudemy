@@ -43,9 +43,7 @@
                   <li>
                       <a href="posts.php?source=add_post"><i class="fa fa-fw fa-plus"></i> Add Post</a>
                   </li>
-                  <li>
-                      <a href="posts.php?source=edit_post"><i class="fa fa-fw fa-pencil-square-o"></i> Edit Post</a>
-                  </li>
+                
               </ul>
             </li>
             <li>

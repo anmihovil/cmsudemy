@@ -5,6 +5,7 @@
       <th>Id</th>
       <th>Author</th>
       <th>Comment</th>
+      <th>Category</th>
       <th>Email</th>
       <th>Status</th>
       <th>Response</th>
@@ -37,6 +38,7 @@
       echo "<td>$comment_author</td>";
       echo "<td>$comment_content</td>";
 
+
       // $query = "SELECT * FROM categories WHERE cat_id ={$post_category_id} ";
       // $select_categories_id = mysqli_query($connection, $query);
       //
@@ -44,6 +46,8 @@
       //   $cat_id=$row['cat_id'];
       //   $cat_title=$row['cat_title'];
       // }
+      //echo "<td>$comment_post_id</td>";
+      echo "<td>test</td>";
 
       echo "<td>$comment_email</td>";
       echo "<td>$comment_status</td>";

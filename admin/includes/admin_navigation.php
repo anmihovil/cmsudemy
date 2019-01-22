@@ -49,7 +49,7 @@
             <li>
                 <a href="categories.php"><i class="fa fa-fw fa-list-alt"></i> Categories</a>
             </li>
-            <li class="active">
+            <li class="">
                 <a href="comments.php"><i class="fa fa-fw fa-comment"></i> Comments</a>
             </li>
             <li>

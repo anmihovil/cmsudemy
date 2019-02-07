@@ -13,7 +13,7 @@
             <div class="col-md-8">
 
               <?php
-              $query = "SELECT * FROM posts";
+              $query = "SELECT * FROM posts WHERE post_status = 'published' ";
 
               $sellect_all_posts_query = mysqli_query($connection, $query);
 
@@ -24,6 +24,7 @@
                 $post_date    =  $row['post_date'];
                 $post_image   =  $row['post_image'];
                 $post_content =  substr($row['post_content'],0,100);
+                $post_status = $row['post_status'];
 
                 //echo "<li><a href='#'>{$post_title}</a></li>";
                 ?>

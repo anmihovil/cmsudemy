@@ -12,6 +12,8 @@
       <th>Tags</th>
       <th>Comments</th>
       <th>Status</th>
+      <th>Delete</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -62,19 +64,6 @@
 
     ?>
 
-
-    <!-- Initial table test -->
-    <!-- <tr> -->
-      <!-- <td>10</td>
-      <td>Edwin Diaz</td>
-      <td>Bootstrap framework</td>
-      <td>Bootstrap</td>
-      <td>Status</td>
-      <td>Image</td>
-      <td>Tags</td>
-      <td>Comments</td>
-      <td>Date</td> -->
-    <!-- </tr> -->
   </tbody>
 </table>
 
@@ -85,7 +74,7 @@ if(isset($_GET['delete'])){
 
   $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
   $delete_query = mysqli_query($connection, $query);
-
+  header("Location: posts.php");
 }
 
 ?>

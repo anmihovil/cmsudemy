@@ -27,7 +27,7 @@ if(isset($_POST['create_post'])){
     die("Query failed! ".mysqli_error($connection));
   }
 
-  //confirm($create_post_query);
+  confirmQuery($create_post_query);
 
 }
 

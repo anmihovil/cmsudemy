@@ -46,7 +46,7 @@ if(isset($_POST['add_user'])){
     <label for="title">User Role </label>
     <select name="user_role" id="">
 
-     <option value="subscriber">select Options</option>
+     <option value="subscriber">select options</option>
      <option value="admin">admin</option>
      <option value="editor">editor</option>
      <option value="subscriber">subscriber</option>

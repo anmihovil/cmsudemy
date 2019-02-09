@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="page-header">
-                            Welcome to Admin
+                            Welcome to <?php echo " ".$_SESSION['user_firstname'];?>
                             <small>Subheading...</small>
                         </h2>
 

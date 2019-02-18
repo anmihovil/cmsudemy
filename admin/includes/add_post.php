@@ -39,11 +39,7 @@ if(isset($_POST['create_post'])){
     <label for="title">Post Title</label>
     <input type="text" class="form-control" name="post_title">
   </div>
-
-  <!-- <div class="form-group">
-    <label for="post_category">Post Category Id</label>
-    <input type="text" class="form-control" name="post_category_id">
-  </div> -->
+  
   <div class="form-group">
     <label for="title">Post Category Id</label>
     <select name="post_category" id="">
@@ -53,7 +49,7 @@ if(isset($_POST['create_post'])){
         $query = "SELECT * FROM categories";
         $select_categories = mysqli_query($connection, $query);
 
-        //confirm($select_categories);
+        confirmQuery($select_categories);
 
         while($row = mysqli_fetch_assoc($select_categories)){
           $cat_id = $row['cat_id'];
@@ -73,7 +69,11 @@ if(isset($_POST['create_post'])){
 
   <div class="form-group">
     <label for="post_status">Post Status</label>
-    <input type="text" class="form-control" name="post_status">
+    <!-- <input type="text" class="form-control" name="post_status"> -->
+    <select name="post_status" id="">
+        <option value="draft">draft</option>
+        <option value="published">publish</option>
+    </select>
   </div>
 
   <div class="form-group">
@@ -88,7 +88,17 @@ if(isset($_POST['create_post'])){
 
   <div class="form-group">
     <label for="post_content">Post Content</label>
-    <textarea class="form-control" name="post_content" id=""></textarea>
+    <textarea class="form-control" name="post_content" id="body"></textarea>
+    <script>
+            ClassicEditor
+                    .create( document.querySelector( '#body' ) )
+                    .then( editor => {
+                            console.log( editor );
+                    } )
+                    .catch( error => {
+                            console.error( error );
+                    } );
+    </script>
   </div>
 
   <div class="form-group">

@@ -56,6 +56,8 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
 
     confirmQuery($update_post);
 
+    echo "<p class='bg-success'>Post Updated. <a href='../post.php?p_id={$the_post_id}'>View Post </a>
+    or<a href='posts.php'> Edit more posts</a></p>";
   }
 }
 
@@ -77,7 +79,7 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
         $query = "SELECT * FROM categories";
         $select_categories = mysqli_query($connection, $query);
 
-        //confirm($select_categories);
+        confirmQuery($select_categories);
 
         while($row = mysqli_fetch_assoc($select_categories)){
           $cat_id = $row['cat_id'];
@@ -93,11 +95,20 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
     <div class="form-group">
         <label for="post_author">Post Author</label>
         <input value="<?php echo $post_author;?>" type="text" class="form-control" name="post_author">
-      </div>
+    </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <label for="post_status">Post Status</label>
-    <input value = "<?php echo $post_status;?>" type="text" class="form-control" name="post_status">
+    <select name="post_status" id="">
+        <option value="<?php echo $post_status;?>"><?php echo $post_status;?></option>
+        <?php 
+          if($post_status == 'published'){
+            echo "<option value='draft'>Draft</option>";
+          }else{
+            echo "<option value='published'>Publish</option>";
+          }
+        ?>
+    </select>
   </div>
 
   <div class="form-group">
@@ -113,7 +124,17 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
 
   <div class="form-group">
     <label for="post_content">Post Content</label>
-    <textarea class="form-control" name="post_content" id=""><?php echo $post_content;?></textarea>
+    <textarea class="form-control" name="post_content" id="body"><?php echo $post_content;?></textarea>
+    <script>
+            ClassicEditor
+                    .create( document.querySelector( '#body' ) )
+                    .then( editor => {
+                            console.log( editor );
+                    } )
+                    .catch( error => {
+                            console.error( error );
+                    } );
+    </script>
   </div>
 
   <div class="form-group">

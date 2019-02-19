@@ -1,7 +1,8 @@
 <?php include "../includes/db.php"?>
 <?php include "functions.php"?>
-<?php session_start();?>
 <?php ob_start();?>
+<?php session_start();?>
+
 
 <?php 
 

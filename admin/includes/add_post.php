@@ -29,6 +29,10 @@ if(isset($_POST['create_post'])){
 
   confirmQuery($create_post_query);
 
+  $the_post_id = mysqli_insert_id($connection);
+
+  echo "<p class='bg-success'>Post Created. <a href='../post.php?p_id={$the_post_id}'>View Post </a>
+    or<a href='posts.php'> Edit more posts</a></p>";
 }
 
 ?>
@@ -68,11 +72,12 @@ if(isset($_POST['create_post'])){
   </div>
 
   <div class="form-group">
-    <label for="post_status">Post Status</label>
+    <!-- <label for="post_status">Post Status</label> -->
     <!-- <input type="text" class="form-control" name="post_status"> -->
     <select name="post_status" id="">
-        <option value="draft">draft</option>
+        <option value="draft">Post Status</option> 
         <option value="published">publish</option>
+        <option value="draft">draft</option>
     </select>
   </div>
 
@@ -89,16 +94,16 @@ if(isset($_POST['create_post'])){
   <div class="form-group">
     <label for="post_content">Post Content</label>
     <textarea class="form-control" name="post_content" id="body"></textarea>
-    <script>
-            ClassicEditor
-                    .create( document.querySelector( '#body' ) )
-                    .then( editor => {
-                            console.log( editor );
-                    } )
-                    .catch( error => {
-                            console.error( error );
-                    } );
-    </script>
+    <!-- <script>
+      ClassicEditor
+        .create( document.querySelector( '#body' ) )
+        .then( editor => {
+                console.log( editor );
+        } )
+        .catch( error => {
+                console.error( error );
+        } );
+    </script> -->
   </div>
 
   <div class="form-group">

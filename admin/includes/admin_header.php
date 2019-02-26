@@ -3,7 +3,6 @@
 <?php ob_start();?>
 <?php session_start();?>
 
-
 <?php 
 
 if(!isset($_SESSION['user_role'])){
@@ -46,7 +45,7 @@ if(!isset($_SESSION['user_role'])){
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif] -->
-
+       
 </head>
 
 <body>

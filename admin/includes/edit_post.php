@@ -125,16 +125,16 @@ while($row = mysqli_fetch_assoc($select_posts_by_id)){
   <div class="form-group">
     <label for="post_content">Post Content</label>
     <textarea class="form-control" name="post_content" id="body"><?php echo $post_content;?></textarea>
-    <script>
-            ClassicEditor
-                    .create( document.querySelector( '#body' ) )
-                    .then( editor => {
-                            console.log( editor );
-                    } )
-                    .catch( error => {
-                            console.error( error );
-                    } );
-    </script>
+    <!-- <script>
+      ClassicEditor
+        .create( document.querySelector( '#body' ) )
+        .then( editor => {
+                console.log( editor );
+        } )
+        .catch( error => {
+                console.error( error );
+        } );
+    </script> -->
   </div>
 
   <div class="form-group">

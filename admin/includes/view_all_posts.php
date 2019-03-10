@@ -21,6 +21,31 @@ if(isset($_POST['checkBoxArray'])){
       $delete_query = mysqli_query($connection, $query);
       confirmQuery($delete_query);
       break;
+      case 'clone':
+      $query = "SELECT * FROM posts WHERE post_id = '{$postValueId}' ";
+      $select_post_query = mysqli_query($connection, $query);
+
+      while($row = mysqli_fetch_array($select_post_query)){
+        $post_title=$row['post_title'];
+        $post_category_id=$row['post_category_id'];
+        $post_date=$row['post_date'];
+        $post_author = $row['post_author'];
+        $post_status=$row['post_status'];
+        $post_image=$row['post_image'];
+        $post_tags=$row['post_tags'];
+        $post_content=$row['post_content'];
+      }
+
+      $query = "INSERT INTO posts( post_title, post_category_id, post_date, post_author, 
+      post_status, post_image, post_tags, post_content ) " ;
+      $query.= " VALUES( '{$post_title}', {$post_category_id}, now(), '{$post_author}', 
+      '{$post_status}','{$post_image}','{$post_tags}', '{$post_content}' ) ";
+
+      $clone_query = mysqli_query($connection, $query);
+      if(!$clone_query){
+        die("Clone query failed!". mysqli_error($connection));
+      }
+      break;
       default:
 
     }
@@ -38,6 +63,7 @@ if(isset($_POST['checkBoxArray'])){
       <option value="published">Publish</option>
       <option value="draft">Draft</option>
       <option value="delete">Delete</option>
+      <option value="clone">Clone</option>
     </select>
   </div>
 
@@ -71,7 +97,7 @@ if(isset($_POST['checkBoxArray'])){
 
       global $connection;
 
-      $query = "SELECT * FROM posts ";
+      $query = "SELECT * FROM posts ORDER BY post_id DESC ";
       $select_posts = mysqli_query($connection, $query);
 
       while($row = mysqli_fetch_assoc($select_posts)){
@@ -113,7 +139,7 @@ if(isset($_POST['checkBoxArray'])){
         echo "<td>$post_comment_count</td>";
         echo "<td>$post_status</td>";
         echo "<td><a href='../post.php?p_id={$post_id}'>View</a></td>";
-        echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
+        echo "<td><a onClick=\" javascript: return confirm('Are You Sure To Delete'); \" href='posts.php?delete={$post_id}'>Delete</a></td>";
         echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
         echo "</tr>";
       }

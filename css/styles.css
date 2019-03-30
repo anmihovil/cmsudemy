@@ -1,0 +1,6 @@
+/* Adding style to pagination buttons */
+
+.pager li .active_link {
+  background: lightslategray !important;
+  color: #fff;
+}

@@ -1,6 +1,7 @@
 <?php include "includes/admin_header.php"?>
 
     <div id="wrapper">
+
         <!-- Navigation -->
 <?php include "includes/admin_navigation.php"?>
 
@@ -15,7 +16,7 @@
                         Welcome <?php echo " ".$_SESSION['user_firstname'];?>
                         <small>Subheading...</small>
                     </h2>
-
+                    
                 </div>
             </div>
             <!-- /.row -->

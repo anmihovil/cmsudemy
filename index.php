@@ -2,6 +2,17 @@
 <?php include("includes/header.php");?>
 <?php include("includes/db.php");?>
 
+<?php 
+  $session = session_id();
+  $time = time();
+  $time_out_in_seconds = 60;
+  $time_out = $time - $time_out_in_seconds;
+
+  $query = "SELECT * FROM users_online WHERE session = '$session' ";
+  $send_query = mysqli_query($connection, $query);
+  $count = mysqli_num_rows($send_query);
+?>
+
 <!-- Navigation -->
 <?php include("includes/navigation.php");?>
 <!-- Page Content -->
